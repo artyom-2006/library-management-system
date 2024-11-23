@@ -1,0 +1,64 @@
+/* Default styles */
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #E8E8E6;
+    text-align: left;
+}
+
+th {
+    background-color: #F7F6F2;
+    font-size: 14px;
+}
+
+td.button-cell {
+    text-align: center;
+    padding: 5px;
+}
+
+/* Ebooks list fields */
+.ebook-header-row th {
+    text-wrap: nowrap;
+}
+
+.ebook-header-row th, .ebook-body td {
+    padding: 8px;
+}
+
+.ebook-body tr td {
+    font-size: 14px;
+    text-wrap: wrap;
+}
+
+.ebook-body tr td:nth-child(4),
+.ebook-body tr td:nth-child(5),
+.ebook-body tr td:nth-child(6),
+.ebook-body tr td:nth-child(8) {
+    text-align: center;
+}
+
+.ebook-body tr td:nth-child(2) {
+    min-width: 160px;
+    max-width: 160px;
+    word-break: normal;
+} 
+
+.ebook-body tr td:nth-child(3) {
+    min-width: 140px;
+    max-width: 140px;
+    word-break: normal;
+}
+
+.ebook-body tr .description {
+    min-width: 320px;
+    font-size: 12px;
+}
+
+.ebook-body .button-cell {
+    padding: 5px;
+}

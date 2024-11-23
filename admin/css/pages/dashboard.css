@@ -1,0 +1,49 @@
+#dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+#dashboard-container .information-card {
+    width: 30%;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#dashboard-container .information-card .quantity,
+#dashboard-container .information-card .subject {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#dashboard-container .information-card .quantity {
+    font-size: 52px;
+    margin: 0;
+}
+
+#dashboard-container .information-card .subject {
+    font-size: 16px;
+    margin: 0;
+}
+
+#users-quantity-card {
+    background: linear-gradient(to right, #FFEB3B, #FBC02D);
+}
+
+#ebooks-quantity-card {
+    background: linear-gradient(to right, #28E27F, #3A8E56);
+}
+
+#books-quantity-card {
+    background: linear-gradient(to right, #81D4FA, #2196F3);
+}
+
+#empty-one {
+    background: linear-gradient(to right, #FF8A80, #F44336);
+}

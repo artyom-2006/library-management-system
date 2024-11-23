@@ -1,0 +1,38 @@
+header {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(90deg, #FA420A 50%, #FA9A0A 100%);
+    /*background-color: #FA420A;*/
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+header .log-out {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color .3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+header .log-out img {
+    width: 20px;
+}
+
+header .log-out:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
