@@ -1,0 +1,16 @@
+:root {
+    /* Colors */
+    --main-color: #FA420A;
+    --second-color: #FA9A0A;
+    --button-disabled-background-color: #C5C5C5;
+    --button-text-color: #F0F0F0;
+    --input-success-border-color: #28A745;
+    --input-error-border-color: #DC3545;
+    --modal-secondary-border-color: #C1C1C1;
+        
+    /* Fonts */
+    --headers-font: Arial, Helvetica, sans-serif;
+    --main-font: Arial, Helvetica, sans-serif;
+    --heading-font: ArmguardU;
+    --bebas-neue: BebasNeue;
+}

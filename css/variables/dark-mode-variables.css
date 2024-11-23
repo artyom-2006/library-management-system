@@ -1,0 +1,19 @@
+:root {
+    /* Colors */
+    --background-color: #0D1012;
+    --text-color: #F0F0F0;
+    --input-background-color: #1A1A1A;
+    --input-border-color: #C1C1C1;
+    --footer-background-color: #4E4E4E;
+    --layer-color: rgba(0, 0, 0, .6);
+    --modal-background-color: #1A1A1A;
+    --modal-second-button-background-color: #1A1A1A;
+    --icon-hover-background-color: rgba(239, 239, 240, .1);
+    --link-text-color: #D3D3D3;
+    --link-hover-text-color: #FFFFFF;
+
+    /* Icons */
+    --hamburger-menu-icon: url('/Library/resources/images/hamburger-dark-icon.png');
+    --search-bar-loop-icon: url('/Library/resources/images/search-dark-icon.png');
+    --filter-icon: url('/Library/resources/images/filter-dark-icon.png');
+}
