@@ -64,22 +64,6 @@
                 <div id="filter-icon"></div>
             </div>
         </div>
-        <!--
-        <div id="ebooks-list">
-
-            <div id="ebook-card">
-                <div class="img-block">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5bpadawrHazrr4_d-X8zLtnoE2rfzngMHtg&s" alt="Կարպատյան դղյակը">
-                </div>
-                <div id="info-block">
-                    <p class="ebook-name">Կարպատյան դղյակը</p>
-                    <p class="ebook-author">Ժյուլ Վեռն</p>
-                    <button type="button">Տեսնել գիրքը</button>
-                </div>
-            </div>  
-
-        </div>
-        -->
     </main>
     <?php require "../../../includes/footer.inc.php"; ?>
     <script src="../../../js/components/loader.js"></script>
