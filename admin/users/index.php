@@ -25,7 +25,7 @@ if(!isAdminLoggedIn()) {
     <link rel="stylesheet" href="../../css/variables/light-mode-variables.css">
     <link rel="stylesheet" href="../../css/components/layer.css">
     <link rel="stylesheet" href="../css/components/modal-window.css">
-    <link rel="shortcut icon" href="../../resources/images/admin-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../resources/images/admin-icon.png" type="image/x-icon">
 </head>
 <body>
     <?php include "../../includes/loader.inc.php"; ?>
@@ -59,5 +59,6 @@ if(!isAdminLoggedIn()) {
     <script src="../../js/components/loader.js"></script>
     <script src="../js/components/collapsible-menu.js"></script>
     <script type="module" src="../js/pages/get-users-data.js"></script>
+    <script src="../js/components/log-out.js"></script>
 </body>
 </html>

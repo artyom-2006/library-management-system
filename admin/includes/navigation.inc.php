@@ -27,8 +27,14 @@
             <img src="/Library/admin/resources/images/list-icon.png" alt="Էլեկտրոնային գրքերի ցանկ">
             Գրքերի ցանկ
         </a>
-        <a href="/Library/admin/ebooks/add-section/">Ավելացնել բաժին</a>
-        <a href="/Library/admin/ebooks/sections-list/">Բաժինների ցանկ</a>
+        <a href="/Library/admin/ebooks/add-section/">
+            <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել բաժին">
+            Ավելացնել բաժին
+        </a>
+        <a href="/Library/admin/ebooks/sections-list/">
+            <img src="/Library/admin/resources/images/list-icon.png" alt="Բաժինների ցանկ">
+            Բաժինների ցանկ
+        </a>
     </div>
     <button class="collapsible">
         <img src="/Library/admin/resources/images/book-icon.png" alt="Ֆիզիկական գրքեր">
@@ -43,8 +49,17 @@
             <img src="/Library/admin/resources/images/list-icon.png" alt="Ֆիզիկական գրքերի ցանկ">
             Գրքերի ցանկ
         </a>
-        <a href="#">Տեսնել ամրագրումները</a>
-        <a href="#">Ավելացնել բաժին</a>
-        <a href="#">Բաժինների ցանկ</a>
+        <a href="#">
+            <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել բաժին">
+            Ավելացնել բաժին
+        </a>
+        <a href="#">
+            <img src="/Library/admin/resources/images/list-icon.png" alt="Բաժինների ցանկ">
+            Բաժինների ցանկ
+        </a>
+        <a href="#">
+            
+            Տեսնել ամրագրումները
+        </a>
     </div>
 </aside>

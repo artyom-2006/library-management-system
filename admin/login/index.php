@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../../css/normalize.min.css">
   <link rel="stylesheet" href="../css/pages/log-in.css">
   <link rel="stylesheet" href="../../css/variables/variables.css">
-  <link rel="shortcut icon" href="../../resources/images/opened-book-icon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../resources/images/admin-icon.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">

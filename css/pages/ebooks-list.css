@@ -218,6 +218,29 @@ main {
     margin-left: 10px;
 }
 
+/* No books view */
+#no-books-view {
+    width: 100%;
+    min-height: calc(100vh - 80px - 120px);
+    padding: 40px calc(10% - 10px) 100px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#no-books-view img {
+    width: 420px;
+    margin-top: -40px;
+}
+
+#no-books-view p {
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
 /* Ebooks list */
 #ebooks-list {
     width: 100%;
@@ -395,6 +418,25 @@ main {
         margin-left: 5px;
     }
 
+    /* No books view */
+    #no-books-view {
+        min-height: calc(100vh - 70px - 80px);
+        padding: 40px calc(8% - 10px) 100px 8%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #no-books-view img {
+        width: 380px;
+        margin-top: -20px;
+    }
+
+    #no-books-view p {
+        font-size: 20px;
+    }
+
     /* Ebooks list */
     #ebooks-list {
         padding: 40px 8% 40px 8%;
@@ -520,6 +562,25 @@ main {
         background-size: 25px 25px;
         margin-left: 5px;
         margin-right: 5px;
+    }
+
+    /* No books view */
+    #no-books-view {
+        min-height: calc(100vh - 70px - 80px);
+        padding: 40px 8% 100px 8%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #no-books-view img {
+        width: 340px;
+        margin-top: -20px;
+    }
+
+    #no-books-view p {
+        font-size: 18px;
     }
     
     /* Ebooks list */

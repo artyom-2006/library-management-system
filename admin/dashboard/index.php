@@ -21,7 +21,7 @@ if(!isAdminLoggedIn()) {
     <link rel="stylesheet" href="../css/pages/dashboard.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="shortcut icon" href="../../resources/images/admin-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../resources/images/admin-icon.png" type="image/x-icon">
 </head>
 <body>
     <?php include "../../includes/loader.inc.php"; ?>

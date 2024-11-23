@@ -21,7 +21,7 @@ if(!isAdminLoggedIn()) {
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/navigation.css">
     <link rel="stylesheet" href="../../css/components/form.css">
-    <link rel="shortcut icon" href="../../../resources/images/admin-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../resources/images/admin-icon.png" type="image/x-icon">
 </head>
 <body>
     <?php include "../../../includes/loader.inc.php"; ?>
@@ -86,6 +86,7 @@ if(!isAdminLoggedIn()) {
     </main>
     <script src="../../../js/components/loader.js"></script>
     <script src="../../js/components/collapsible-menu.js"></script>
+    <script src="../../js/components/log-out.js"></script>
     <script type="module" src="../../js/pages/add-ebook-data.js"></script>
 </body>
 </html>
