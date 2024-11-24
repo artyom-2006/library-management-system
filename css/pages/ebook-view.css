@@ -37,19 +37,19 @@ main {
     width: 340px;
     max-width: 100%;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 10px;
     display: block;
 }
 
 /* Ebook information */
 #ebook-details .ebook-info {
-    padding: 30px 40px 0;
+    padding: 25px 40px 0;
     position: relative;
 }
 
 #ebook-details .ebook-info .ebook-name {
     max-width: 80%;
-    text-wrap: balance;
+
     color: var(--text-color);
     font-family: var(--bebas-neue);
     font-size: 42px;

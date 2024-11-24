@@ -19,37 +19,7 @@
     <?php include "../../../includes/loader.inc.php"; ?>
     <div id="layer">
         <div id="modal-window">
-            <div id="ebook-cover">
-                <img src="https://upload.wikimedia.org/wikipedia/hy/6/6d/%D4%B5%D5%BE_%D5%B8%D5%B9_%D5%B8%D6%84_%D5%B9%D5%B4%D5%B6%D5%A1%D6%81....jpg" alt="Կարպատյան դղյակը">
-            </div>
-            <div id="ebook-info">
-                <p class="modal-ebook-name">Կարպատյան դղյակը</p>
-                <p class="modal-ebook-author">Ժյուլ Վեռն</p>
-                <div class="modal-ebook-property">
-                    <p class="property">Էջեր</p>
-                    <p class="value">264</p>
-                </div>
-                <div class="modal-ebook-property">
-                    <p class="property">Լեզու</p>
-                    <p class="value">Հայերեն</p>
-                </div>
-                <div class="modal-ebook-sections">
-                    <p class="property">Բաժիններ</p>
-                    <div class="sections">
-                        <a href="" class="section">Գեղարվեստական գրականություն</a>
-                        <a href="" class="section">Գեղարվեստական</a>
-                        <a href="" class="section">Գեղարվեստական գրականություն</a>
-                        <a href="" class="section">Գեղարվեստական գրականություն</a>
-                        <a href="" class="section">Գեղարվեստական</a>
-                        <a href="" class="section">Գեղարվեստական գրականություն</a>
-                        <a href="" class="section">Գեղարվեստական</a>
-                        <a href="" class="section">Գեղարվեստական գրականություն</a>
-                    </div>
-                </div>
-                <div class="see-ebook-button-box">
-                    <button type="submit">Տեսնել գիրքը</button>
-                </div>
-            </div>
+            
         </div>
     </div>
     <?php require "../../../includes/header.inc.php"; ?>

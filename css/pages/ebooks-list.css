@@ -13,6 +13,7 @@ body {
     background-color: var(--modal-background-color);
     padding: 25px;
     width: 700px;
+    height: 420px;
     z-index: 20;
     transition: .3s;
     display: flex;
@@ -21,6 +22,7 @@ body {
 #ebook-cover {
     width: 40%;
     height: 100%;
+    display: inline-block;
 }
 
 #ebook-cover img {
@@ -32,7 +34,8 @@ body {
 
 #ebook-info {
     width: 60%;
-    padding: 15px 25px;
+    padding: 15px 0 0 25px;
+    position: relative;
 }
 
 #ebook-info .modal-ebook-name,
@@ -112,8 +115,11 @@ body {
 }
 
 #ebook-info .see-ebook-button-box {
+    width: 100%;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 
 #ebook-info .see-ebook-button-box button {
@@ -127,7 +133,6 @@ body {
     height: 35px;
     transition: .4s;
     cursor: pointer;
-    margin-top: 20px;
 }
 
 /* Main */

@@ -2,8 +2,9 @@
 <html lang="hy">
 <head>
     <?php require "../../../includes/meta-tags.inc.php"; ?>
-    <title>Կարպատյան դղյակը</title>
+    <title>Էլեկտրոնային գրքի դիտում</title>
     <link rel="stylesheet" href="../../../css/normalize.min.css">
+    <link rel="stylesheet" href="../../../css/components/loader.css">
     <link rel="stylesheet" href="../../../css/variables/light-mode-variables.css" id="theme-stylesheet">
     <link rel="stylesheet" href="../../../css/variables/variables.css">
     <link rel="stylesheet" href="../../../css/pages/ebook-view.css">
@@ -16,43 +17,27 @@
     <link rel="shortcut icon" href="../../../resources/images/opened-book-icon.png" type="image/x-icon">
 </head>
 <body>
+    <?php include "../../../includes/loader.inc.php"; ?>
     <div id="layer"></div>
     <?php require "../../../includes/header.inc.php"; ?>
     <main>
         <div id="ebook-view">
             <div id="ebook-details">
                 <div class="ebook-cover">
-                    <img src="https://zangakbookstore.am/uploads/images/products/36a701728b49c4a394369bcdd53cc3cf.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="ebook-info">
-                    <p class="ebook-name">Կարպատյան դղյակը</p>
-                    <p class="ebook-author">Ժյուլ Վեռն</p>
-                    <div class="ebook-properties">
-                        <div class="row">
-                            <p class="property">Էջեր</p>
-                            <p class="value">264</p>
-                        </div>
-                        <div class="row">
-                            <p class="property">Լեզու</p>
-                            <p class="value">Հայերեն</p>
-                        </div>
-                        <div class="row">
-                            <p class="property">Ծավալը</p>
-                            <p class="value">74 մբ</p>
-                        </div>
-                        <div class="row">
-                            <p class="property">Ավելացման ամսաթիվ</p>
-                            <p class="value">11.11.2024</p>
-                        </div>
-                    </div>
+                    <p class="ebook-name"></p>
+                    <p class="ebook-author"></p>
+                    <div class="ebook-properties"></div>
                     <div class="ebook-sections">
                         <p class="property">Բաժիններ</p>
                         <div class="sections">
                             <a href="" class="section">Գեղարվեստական գրականություն</a>
-                            <a href="" class="section">Գեղարվեստական</a>
-                            <a href="" class="section">Գեղարվեստական գրականություն</a>
-                            <a href="" class="section">Գեղարվեստական գրականություն</a>
-                            <a href="" class="section">Գեղարվեստական գրականություն</a>
+                            <a href="" class="section">Ֆանտաստիկա</a>
+                            <a href="" class="section">Պատանեկան</a>
+                            <a href="" class="section">Վեպ</a>
+                            <a href="" class="section">Դասական գրականություն</a>
                         </div>
                     </div>
                     <div class="download-ebook-button-box">
@@ -67,7 +52,9 @@
         </div>
     </main>
     <?php require "../../../includes/footer.inc.php"; ?>
+    <script src="../../../js/components/loader.js"></script>
     <script src="../../../js/theme.js"></script>
+    <script type="module" src="../../../js/pages/ebook-view-process.js"></script>
     <script src="../../../js/components/hamburger-menu.js"></script>
 </body>
 </html>
