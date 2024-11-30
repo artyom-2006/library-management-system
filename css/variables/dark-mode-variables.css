@@ -11,9 +11,13 @@
     --icon-hover-background-color: rgba(239, 239, 240, .1);
     --link-text-color: #D3D3D3;
     --link-hover-text-color: #FFFFFF;
+    --option-card-background-color: #282828;
+    --save-book-button-background-color: #4C4C4C;
 
     /* Icons */
     --hamburger-menu-icon: url('/Library/resources/images/hamburger-dark-icon.png');
     --search-bar-loop-icon: url('/Library/resources/images/search-dark-icon.png');
     --filter-icon: url('/Library/resources/images/filter-dark-icon.png');
+    --save-book-icon: url('/Library/resources/images/save-book-dark-icon.png');
+    --saved-book-icon: url('/Library/resources/images/saved-book-dark-icon.png');
 }

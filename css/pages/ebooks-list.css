@@ -120,9 +120,10 @@ body {
     justify-content: center;
     position: absolute;
     bottom: 0;
+    gap: 10px;
 }
 
-#ebook-info .see-ebook-button-box button {
+#ebook-info .see-ebook-button-box #page-view-button {
     border: none;
     background-color: var(--main-color);
     font-weight: bold;
@@ -135,6 +136,12 @@ body {
     cursor: pointer;
 }
 
+#ebook-info .see-ebook-button-box #save-book-button {
+    width: 35px;
+    height: 35px;
+    background-size: 18px;
+}
+
 /* Main */
 main {
     width: 100%;
@@ -142,12 +149,20 @@ main {
     flex-direction: column;
 }
 
-#section-name-search-bar {
+#section-name-search-bar, #section-name-bar {
     width: 100%;
     height: 120px;
     padding-left: 10%;
     padding-right: 10%;
     display: flex;
+}
+
+#section-name-bar #section-name {
+    width: 100%;
+}
+
+#section-name-bar #section-name .line {
+    width: 20%;
 }
 
 /* Section name */
@@ -325,7 +340,7 @@ main {
         background-color: var(--second-color);
     }
 
-    #ebook-info .see-ebook-button-box button:hover {
+    #ebook-info .see-ebook-button-box #page-view-button:hover {
         background-color: var(--second-color);
     }
 
@@ -343,7 +358,7 @@ main {
         background-color: var(--second-color);
     }
 
-    #ebook-info .see-ebook-button-box button:focus {
+    #ebook-info .see-ebook-button-box #page-view-button:focus {
         background-color: var(--second-color);
     }
 
@@ -391,7 +406,7 @@ main {
         font-size: 12px;
     }
 
-    #section-name-search-bar {
+    #section-name-search-bar, #section-name-bar {
         height: 80px;
         padding-left: 8%;
         padding-right: 8%;
@@ -532,6 +547,25 @@ main {
         padding-left: 8%;
         padding-right: 8%;
         flex-direction: column;
+    }
+
+    #section-name-bar {
+        height: 80px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    #section-name-bar #section-name {
+        width: 100%;
+        height: 100%;
+    }
+
+    #section-name-bar #section-name .section-name {
+        font-size: 24px;
+    }
+
+    #section-name-bar #section-name .line {
+        width: 120px;
     }
 
     /* Section name */

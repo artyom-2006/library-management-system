@@ -11,7 +11,7 @@ verifyEmailForm.addEventListener("submit", (event) => {
     };
 
     // Sending data to the back-end with fetch
-    fetch('http://localhost/Library/app/forgot-password/verify-email/verify-email.php', {
+    fetch('/Library/app/forgot-password/verify-email/verify-email.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

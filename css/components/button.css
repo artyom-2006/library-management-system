@@ -1,5 +1,4 @@
-/* Button */
-
+/* Main button */
 #main-button {
     width: 150px;
     height: 40px;
@@ -17,6 +16,27 @@
 #main-button.disabled {
     background-color: var(--button-disabled-background-color);
     cursor: default;
+}
+
+/* Save book button */
+#save-book-button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--save-book-button-background-color);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#save-book-button.not-saved {
+    background-image: var(--save-book-icon);
+}
+
+#save-book-button.saved {
+    background-image: var(--saved-book-icon);
 }
 
 /* Media queries */

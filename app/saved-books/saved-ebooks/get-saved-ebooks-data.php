@@ -1,12 +1,23 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 
 require "../../../includes/connect.inc.php";
 
 if($_SERVER["REQUEST_METHOD"] === "GET") {
+    $userId = $_SESSION["user_id"];
+
     try {
         // Getting all ebooks data
-        $stmt = $pdo->prepare("SELECT * FROM ebooks");
+        $sql = "
+            SELECT ebooks.*, saved_ebooks.user_id
+            FROM ebooks
+            INNER JOIN saved_ebooks
+            ON ebooks.ebook_id = saved_ebooks.ebook_id
+            WHERE saved_ebooks.user_id = :userId
+        ";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":userId", $userId);
         $stmt->execute();
         $ebooksData = $stmt->fetchAll();
 

@@ -48,21 +48,6 @@ $body = '
                 line-height: 70px !important;
             }
         }
-
-        @media (prefers-color-scheme: dark) {
-            .content {
-                background-color: #0D1012;
-                color: #F0F0F0;
-            }
-
-            .number-block {
-                background-color: #525252;
-            }
-
-            .number-block span {
-                color: #F0F0F0;
-            }
-        }
     </style>
 </head>
 <body>

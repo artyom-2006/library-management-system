@@ -42,6 +42,7 @@
                     </div>
                     <div class="download-ebook-button-box">
                         <button type="button" id="main-button">Ներբեռնել գիրքը</button>
+                        <button type="button" id="save-book-button"></button>
                     </div>
                 </div>
             </div>

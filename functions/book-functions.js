@@ -120,6 +120,7 @@ function ebookModalView(ebook) {
         </div>
     `;
 
+    // See book button functionality
     document.getElementById("page-view-button").addEventListener("click", () => storeSingleEbook(ebook.ebook_id));
 }
 
@@ -142,7 +143,7 @@ function storeSingleEbook(ebookId) {
 }
 
 export function getSingleEbook() {
-    fetch(`/Library/app/ebooks/ebook-view/get-single-ebook.php`, {
+    fetch("/Library/app/ebooks/ebook-view/get-single-ebook.php", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -196,8 +197,94 @@ function renderEbook(ebook) {
     // Download button functionality
     const downloadButton = document.getElementById("main-button");
     downloadButton.addEventListener("click", () => downloadFile(ebook.pdf_file_path));
+
+    // Save/unsave button functionality
+    const saveEbookButton = document.getElementById("save-book-button");
+    saveEbookButton.replaceWith(saveEbookButton.cloneNode(true));
+
+    const updatedSaveEbookButton = document.getElementById("save-book-button");
+
+    // Update button state
+    if (ebook.isSaved) {
+        updatedSaveEbookButton.classList.add("saved");
+        updatedSaveEbookButton.addEventListener("click", () => unsaveEbook(ebook.ebook_id));
+    } else {
+        updatedSaveEbookButton.classList.add("not-saved");
+        updatedSaveEbookButton.addEventListener("click", () => saveEbook(ebook.ebook_id));
+    }
 }
 
+function saveEbook(ebookId) {
+    const saveEbookButton = document.getElementById("save-book-button");
+    saveEbookButton.replaceWith(saveEbookButton.cloneNode(true));
+
+    const updatedsaveEbookButton = document.getElementById("save-book-button");
+
+    fetch(`/Library/app/ebooks/ebook-view/save-ebook.php?id=${ebookId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        if(response.status === "success") {
+            updatedsaveEbookButton.classList.remove("not-saved");
+            updatedsaveEbookButton.classList.add("saved");
+            updatedsaveEbookButton.addEventListener("click", () => unsaveEbook(ebookId));
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+}
+
+function unsaveEbook(ebookId) {
+    const saveEbookButton = document.getElementById("save-book-button");
+    saveEbookButton.replaceWith(saveEbookButton.cloneNode(true));
+
+    const updatedSaveEbookButton = document.getElementById("save-book-button");
+
+    fetch(`/Library/app/ebooks/ebook-view/unsave-ebook.php?id=${ebookId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        if(response.status === "success") {
+            updatedSaveEbookButton.classList.remove("saved");
+            updatedSaveEbookButton.classList.add("not-saved");
+            updatedSaveEbookButton.addEventListener("click", () => saveEbook(ebookId));
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+}
+
+export function getSavedEbooksData() {
+    fetch("/Library/app/saved-books/saved-ebooks/get-saved-ebooks-data.php", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        if(response.status === "success") {
+            renderEbooks(response.ebooksData);
+        } else if(response.status === "fail") {
+            setNoBooksView();
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+}
+
+// Download file function
 function downloadFile(filePath) {
     fetch('/Library/app/ebooks/ebook-view/download.php', {
         method: 'POST',

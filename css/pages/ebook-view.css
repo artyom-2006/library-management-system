@@ -123,11 +123,14 @@ main {
     justify-content: flex-start;
     position: absolute;
     bottom: 0;
+    gap: 10px;
 }
 
-#ebook-view .ebook-info .download-ebook-button-box button {
+#ebook-view .ebook-info .download-ebook-button-box #main-button {
     width: 200px;
 }
+
+
 
 /* Ebook description */
 #ebook-description {
