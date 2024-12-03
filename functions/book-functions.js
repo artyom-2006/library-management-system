@@ -106,14 +106,6 @@ function ebookModalView(ebook) {
                 <p class="property">Ավելացման ամսաթիվ</p>
                 <p class="value">${ebook.added_at}</p>
             </div>
-            <div class="modal-ebook-sections">
-                <p class="property">Բաժիններ</p>
-                <div class="sections">
-                    <a href="" class="section">Գեղարվեստական գրականություն</a>
-                    <a href="" class="section">Ֆանտաստիկա</a>
-                    <a href="" class="section">Մոգական աշխարհներ</a>
-                </div>
-            </div>
             <div class="see-ebook-button-box">
                 <button type="submit" id="page-view-button">Տեսնել գիրքը</button>
             </div>

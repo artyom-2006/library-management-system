@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkbox Example</title>
+</head>
+<body>
+<form id="checkbox-form">
+    <label><input type="checkbox" name="items" value="Գեղարվեստական գրականություն">Գեղարվեստական գրականություն</label><br>
+    <label><input type="checkbox" name="items" value="Վեպ">Վեպ</label><br>
+    <label><input type="checkbox" name="items" value="Ֆանտաստիկա">Ֆանտաստիկա</label><br>
+    <label><input type="checkbox" name="items" value="Դասական գրականություն">Դասական գրականություն</label><br>
+    <button type="button" id="get-values">Ավելացնել</button>
+</form>
+
+<script>
+    document.getElementById('get-values').addEventListener('click', () => {
+        const checkboxes = document.querySelectorAll('input[name="items"]:checked');
+        const checkedValues = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        console.log(checkedValues);
+        console.log(checkedValues.length);
+    });
+</script>
+</body>
+</html>

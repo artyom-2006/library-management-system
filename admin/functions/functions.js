@@ -328,9 +328,8 @@ export function showEbookModal(ebookId) {
     modalWindow.style.display = "block";
 
     // Saving ebook's data changes when form submitted
-    modalWindowForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        saveEbookDataChanges(ebookId)
+    modalWindowForm.addEventListener("submit", () => {
+        saveEbookDataChanges(ebookId);
     });
 }
 
@@ -346,7 +345,6 @@ export function closeEbookModal() {
         
         const form = document.getElementById("update-form");
         const button = document.getElementById("update-form-button");
-  
     }, 400);
 }
 

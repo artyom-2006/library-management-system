@@ -39,8 +39,7 @@ body {
 }
 
 #ebook-info .modal-ebook-name,
-#ebook-info .modal-ebook-author,
-#ebook-info .modal-ebook-sections .property {
+#ebook-info .modal-ebook-author {
     color: var(--text-color);
 }
 
@@ -82,36 +81,6 @@ body {
 
 #ebook-info .modal-ebook-property .value {
     font-size: 16px;
-}
-
-#ebook-info .modal-ebook-sections {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#ebook-info .modal-ebook-sections .property {
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-}
-
-#ebook-info .modal-ebook-sections .sections {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 145px;
-    overflow: hidden;
-}
-
-#ebook-info .modal-ebook-sections .sections .section {
-    font-size: 14px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    text-decoration: underline;
-    color: var(--link-text-color);
 }
 
 #ebook-info .see-ebook-button-box {
