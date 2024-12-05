@@ -348,6 +348,164 @@ export function closeEbookModal() {
     }, 400);
 }
 
+// Functions for genres
+export function getGenresData(type) {
+    let url = "";
+    if(type === "ebook") {
+        url = "/Library/admin/ebooks/genres-list/get-ebooks-genres.php";
+    } else if(type === "pbook") {
+        url = "/Library/admin/pbooks/genres-list/get-pbooks-genres.php";
+    }
+
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        if(response.status === "success") {
+            if(type === "ebook") {
+                storeGenresDataWithinTable(response.genresData, "ebook");
+            } else if(type === "pbook") {
+                storeGenresDataWithinTable(response.genresData, "pbook");
+            }
+        }
+    })
+    .catch((error) => {
+        alert("Առաջացել է խնդիր");
+    });
+}
+
+function storeGenresDataWithinTable(genres, genresType) {
+    const genresTableBody = document.querySelector("#genres-table tbody");
+    const genresProperties = ["genre_id", "genre_name", "created_at"];
+    
+    genres.forEach((genre) => {
+        const row = document.createElement("tr");
+
+        for(let i = 0; i < 3; i++) {
+            let cell = document.createElement("td");
+            cell.innerText = genre[genresProperties[i]];
+            row.append(cell);
+        }
+
+        const editButtonCell = document.createElement("td");
+        editButtonCell.classList.add("button-cell");
+        const editButton = document.createElement("button");
+        editButton.innerText = "Խմբագրել";
+        editButton.classList.add("edit-button");
+        editButton.addEventListener("click", () => editGenre(genre.genre_id, genresType));
+        editButtonCell.append(editButton);
+
+        const deleteButtonCell = document.createElement("td");
+        deleteButtonCell.classList.add("button-cell");
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Ջնջել";
+        deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click", () => deleteGenre(genre.genre_id, genresType, row));
+        deleteButtonCell.append(deleteButton);
+
+        row.append(editButtonCell, deleteButtonCell);
+
+        genresTableBody.append(row);
+    }); 
+}
+
+function deleteGenre(genreId, genreType, row) {
+    if(confirm("Դուք ցանկանո՞ւմ եք ջնջել տվյալ ժանրը")) {
+        fetch(`/Library/admin/handlers/delete-genre.php?id=${genreId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ genreType: genreType })
+        })
+        .then((response) => response.json())
+        .then((response) => {
+            if(response.status === 'success') {
+                row.remove();
+            } else {
+                alert("Առաջացել է խնդիր");
+            }
+        })
+        .catch((error) => {
+            alert("Առաջացել է խնդիր");
+            console.log(error)
+        });
+    }
+}
+
+function editGenre(genreId, genreType) {
+    showGenresModal(genreId);
+    getSingleGenreById(genreId, genreType);
+}
+
+function getSingleGenreById(genreId, genreType) {
+    fetch(`/Library/admin/handlers/get-single-genre.php?id=${genreId}&type=${genreType}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        if(response.status === "success") {
+            document.getElementById("name-input").value = response.genreData.genre_name;
+        }
+    })
+    .catch((error) => {
+        alert("Առաջացել է խնդիր");
+        console.log(error)
+    });
+}
+
+function showGenresModal(genreId) {
+    document.getElementById("layer").classList.add("show");
+
+    const modalWindow = document.getElementById("modal-window");
+    const modalWindowForm = document.getElementById("update-form");
+
+    modalWindow.classList.remove("hide");
+    modalWindow.classList.add("show");
+    modalWindow.style.display = "block";
+
+    // Saving ebook's data changes when form submitted
+    modalWindowForm.addEventListener("submit", () => {
+        saveGenreDataChanges(genreId);
+    });
+}
+
+function saveGenreDataChanges(genreId, genreType) {
+    const changedData = {
+        name: document.getElementById("name-input").value
+    }
+
+    fetch(`/Library/admin/handlers/update-genre.php?id=${genreId}&type=${genreType}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(changedData)
+    })
+    .catch((error) => {
+        alert("Առաջացել է խնդիր");
+    });
+}
+
+export function closeGenresModal() {
+    const modalWindow = document.getElementById("modal-window");
+
+    modalWindow.classList.add("hide");
+    modalWindow.classList.remove("show");
+
+    setTimeout(() => {
+        document.getElementById("layer").classList.remove("show");
+        modalWindow.style.display = "none";
+    }, 400);
+}
+
 // Functions for files
 export function getFileSizeInMB(file) {
     const bytes = file.size;

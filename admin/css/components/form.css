@@ -65,6 +65,7 @@
     text-indent: 0;
     resize: vertical;
     max-height: 400px;
+    min-height: 40px;
 }
 
 #form-container form .first-part .right-side .section-row {
@@ -135,7 +136,7 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 15px;
-    width: 22%;
+    width: 90px;
     min-width: 200px;
 }
 

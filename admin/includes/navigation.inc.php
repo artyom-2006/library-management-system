@@ -27,13 +27,13 @@
             <img src="/Library/admin/resources/images/list-icon.png" alt="Էլեկտրոնային գրքերի ցանկ">
             Գրքերի ցանկ
         </a>
-        <a href="/Library/admin/ebooks/add-section/">
+        <a href="/Library/admin/ebooks/add-genre/">
             <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել բաժին">
-            Ավելացնել բաժին
+            Ավելացնել ժանր
         </a>
-        <a href="/Library/admin/ebooks/sections-list/">
+        <a href="/Library/admin/ebooks/genres-list/">
             <img src="/Library/admin/resources/images/list-icon.png" alt="Բաժինների ցանկ">
-            Բաժինների ցանկ
+            Ժանրերի ցանկ
         </a>
     </div>
     <button class="collapsible">
@@ -51,11 +51,11 @@
         </a>
         <a href="#">
             <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել բաժին">
-            Ավելացնել բաժին
+            Ավելացնել ժանր
         </a>
         <a href="#">
             <img src="/Library/admin/resources/images/list-icon.png" alt="Բաժինների ցանկ">
-            Բաժինների ցանկ
+            Ժանրերի ցանկ
         </a>
         <a href="#">
             
