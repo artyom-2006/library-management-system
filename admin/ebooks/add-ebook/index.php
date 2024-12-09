@@ -55,13 +55,6 @@ if(!isAdminLoggedIn()) {
                             <textarea name="description" id="description-input"></textarea>
                             <p id="description-error-message" class="error-message"></p>
                             <label class="sections-label">Բաժիններ</label>
-                            
-                            <!-- This is one line of checkbox for section -->
-                            <label class="section-row">
-                                <input type="checkbox" name="section">
-                                Գեղարվեստական գրականություն
-                            </label>
-
                         </div>
                     </div>
                     <div class="second-part">

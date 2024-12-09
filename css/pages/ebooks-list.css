@@ -307,7 +307,7 @@ main {
     }
 
     #ebook-card .img-block:hover {
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, .2);
         filter: brightness(0.6);
     }
 
@@ -330,7 +330,7 @@ main {
     }
 
     #ebook-card .img-block:focus {
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, .2);
         filter: brightness(0.6);
     }
 

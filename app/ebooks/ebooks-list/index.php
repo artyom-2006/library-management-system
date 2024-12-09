@@ -37,7 +37,7 @@
     <script src="../../../js/components/loader.js"></script>
     <script src="../../../js/theme.js"></script>
     <script type="module" src="../../../js/pages/ebooks-list-process.js"></script>
-    <script src="../../../js/components/ebook-modal-view.js"></script>
     <script src="../../../js/components/hamburger-menu.js"></script>
+    <script src="../../../js/components/ebook-modal-view.js"></script>
 </body>
 </html>

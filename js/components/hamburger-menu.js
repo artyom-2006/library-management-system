@@ -8,7 +8,7 @@ hamburgerButton.addEventListener("click", () => {
 });
 
 document.addEventListener("mouseup", (event) => {
-    if (!navigation.contains(event.target) && layer.classList.contains("show")) {
+    if(!navigation.contains(event.target) && layer.classList.contains("show")) {
         navigation.classList.remove("active");
         layer.classList.remove("show");
     }

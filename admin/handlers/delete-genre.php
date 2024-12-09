@@ -8,20 +8,32 @@ if($_SERVER["REQUEST_METHOD"] === "DELETE") {
     $requestData = json_decode(file_get_contents("php://input"), true);
 
     if($requestData["genreType"] === "ebook") {
-        $sql = "DELETE FROM ebooks_genres WHERE genre_id = :genreId";
+        $deleteGenreSql = "DELETE FROM ebooks_genres WHERE genre_id = :genreId";
+        $deleteAddedGenreSql = "DELETE FROM added_ebooks_genres WHERE genre_id = :genreId";
     } elseif($requestData["genreType"] === "pbook") {
-        $sql = "DELETE FROM pbooks_genres WHERE genre_id = :genreId";
+        $deleteGenreSql = "DELETE FROM pbooks_genres WHERE genre_id = :genreId";
+        $deleteAddedGenreSql = "DELETE FROM added_pbooks_genres WHERE genre_id = :genreId";
     }
 
     if($genreId) {
         try {
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(":genreId", $genreId);
-            $stmt->execute();
+            $pdo->beginTransaction();
+
+            $stmt1 = $pdo->prepare($deleteAddedGenreSql);
+            $stmt1->bindParam(":genreId", $genreId, PDO::PARAM_INT);
+            $stmt1->execute();
+
+            $stmt2 = $pdo->prepare($deleteGenreSql);
+            $stmt2->bindParam(":genreId", $genreId, PDO::PARAM_INT);
+            $stmt2->execute();
+
+            $pdo->commit();
     
             http_response_code(200);
             echo json_encode(["status" => "success", "message" => "Genre deleted successfully"]);
         } catch(PDOException $e) {
+            $pdo->rollBack();
+
             http_response_code(500);
             echo json_encode(["status" => "fail", "message" => "Operation failed"]);
         }

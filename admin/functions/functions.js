@@ -147,7 +147,7 @@ export function saveUserDataChanges(userId, fields) {
         body: JSON.stringify(changedData)
     })
     .catch((error) => {
-        alert("Առաջացել է խնդիր");
+        alert(error);
     });
 }
 
@@ -262,7 +262,7 @@ export function deleteEbook(ebookId, row) {
             }
         })
         .catch((error) => {
-            alert("Առաջացել է խնդիր");
+            alert(error);
         });
     }
 }
@@ -457,7 +457,44 @@ function getSingleGenreById(genreId, genreType) {
     })
     .catch((error) => {
         alert("Առաջացել է խնդիր");
+    });
+}
+
+export function getAllGenres(genreType) {
+    fetch(`/Library/admin/handlers/get-all-genres.php?type=${genreType}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        if(response.status === "success") {
+            showGenresAsList(response.genresData);
+        }
+    })
+    .catch((error) => {
+        alert("Առաջացել է խնդիր");
         console.log(error)
+    });
+}
+
+function showGenresAsList(genresData) {
+    const genresSection = document.querySelector("#add-ebook-form .first-part .right-side");
+
+    genresData.forEach(genre => {
+        let row = document.createElement("label");
+        row.classList.add("section-row");
+        row.textContent = genre.genre_name;
+
+        let chechkbox = document.createElement("input");
+        chechkbox.type = "checkbox";
+        chechkbox.name = "genre";
+        chechkbox.value = genre.genre_id;
+
+        row.prepend(chechkbox);
+
+        genresSection.append(row);
     });
 }
 

@@ -37,7 +37,7 @@ if(!isAdminLoggedIn()) {
         <div id="main-content">
             <div id="heading-block">
                 <h1 class="section-heading">Էլեկտրոնային գրքեր</h1>
-                <h2 class="heading">Էլեկտրոնային գրքերի բաժինների ցանկ</h2>
+                <h2 class="heading">Էլեկտրոնային գրքերի ժանրերի ցանկ</h2>
             </div>
             <table id="genres-table">
                 <thead>

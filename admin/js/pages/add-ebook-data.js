@@ -1,4 +1,6 @@
-import { getFileSizeInMB, isPDF, isValidImage } from "../../functions/functions.js";
+import { getAllGenres, getFileSizeInMB, isPDF, isValidImage } from "../../functions/functions.js";
+
+getAllGenres("ebook");
 
 const ebookForm = document.getElementById("add-ebook-form");
 
@@ -14,7 +16,9 @@ ebookForm.addEventListener("submit", (event) => {
         file: document.getElementById("file-input").files[0],
         cover: document.getElementById("cover-input").files[0]
     };
-
+    const checkboxes = document.querySelectorAll('input[name="genre"]:checked');
+    const selectedGenres = Array.from(checkboxes).map(checkbox => checkbox.value);
+    
     // Validation
     const textDataInputs = ["name", "author", "edges", "language", "description"];
     const textDataInputsErrors = ["name-error-message", "author-error-message", "edges-error-message", "language-error-message", "description-error-message"];
@@ -81,6 +85,7 @@ ebookForm.addEventListener("submit", (event) => {
         }
 
         eBookReadyData.append("fileSize", getFileSizeInMB(eBookData.file));
+        eBookReadyData.append("selectedGenres", selectedGenres);
 
         fetch('/Library/admin/ebooks/add-ebook/upload.php', {
             method: "POST",
@@ -93,6 +98,7 @@ ebookForm.addEventListener("submit", (event) => {
 
                 // Clearing the form
                 document.getElementById("add-ebook-form").reset();
+                console.log(response);
             }
         })
         .catch((error) => {
