@@ -25,13 +25,17 @@ if($_SERVER["REQUEST_METHOD"] === "DELETE") {
                 }
             }
 
-            $stmt2 = $pdo->prepare("DELETE FROM added_ebooks_genres WHERE ebook_id = :ebookId");
+            $stmt2 = $pdo->prepare("DELETE FROM saved_ebooks WHERE ebook_id = :ebookId");
             $stmt2->bindParam(':ebookId', $ebookId, PDO::PARAM_INT);
             $stmt2->execute();
 
-            $stmt3 = $pdo->prepare("DELETE FROM ebooks WHERE ebook_id = :ebookId");
-            $stmt3->bindParam(':ebookId', $ebookId, pdo::PARAM_INT);
+            $stmt3 = $pdo->prepare("DELETE FROM added_ebooks_genres WHERE ebook_id = :ebookId");
+            $stmt3->bindParam(':ebookId', $ebookId, PDO::PARAM_INT);
             $stmt3->execute();
+
+            $stmt4 = $pdo->prepare("DELETE FROM ebooks WHERE ebook_id = :ebookId");
+            $stmt4->bindParam(':ebookId', $ebookId, pdo::PARAM_INT);
+            $stmt4->execute();
 
             $pdo->commit();
 

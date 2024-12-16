@@ -13,6 +13,8 @@
     --link-hover-text-color: #FFFFFF;
     --option-card-background-color: #282828;
     --save-book-button-background-color: #4C4C4C;
+    --card-background-color: #333333;
+    --card-shadow-color: rgba(160, 160, 160, 0.1);
 
     /* Icons */
     --hamburger-menu-icon: url('/Library/resources/images/hamburger-dark-icon.png');

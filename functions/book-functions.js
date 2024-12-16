@@ -19,7 +19,7 @@ export function getEbooksData() {
     });
 }
 
-function renderEbooks(ebooks) {
+export function renderEbooks(ebooks) {
     const mainSection = document.getElementById("main-section");
 
     let ebooksList = document.createElement("div");
@@ -66,7 +66,7 @@ function renderEbooks(ebooks) {
     mainSection.append(ebooksList);
 }
 
-function setNoBooksView() {
+export function setNoBooksView(messageText = "Գրքեր դեռևս չկան") {
     const mainSection = document.getElementById("main-section");
 
     let noBooksViewSection = document.createElement("div");
@@ -77,7 +77,7 @@ function setNoBooksView() {
     illustrationImage.alt = "Նշումներ";
 
     let message = document.createElement("p");
-    message.innerText = "Գրքեր դեռևս չկան";
+    message.innerText = messageText;
 
     noBooksViewSection.append(illustrationImage, message);
     mainSection.append(noBooksViewSection);

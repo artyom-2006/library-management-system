@@ -25,7 +25,6 @@
         <div id="section-name-search-bar">
             <div id="section-name">
                 <p class="section-name">Էլեկտրոնային գրքեր</p>
-                <hr class="line">
             </div>
             <div id="search-bar">
                 <input type="search" class="search-bar" placeholder="Որևէ հեղինա՞կ, որևէ գի՞րք․․․">

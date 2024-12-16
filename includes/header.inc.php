@@ -1,11 +1,11 @@
 <?php
-require "base-url.inc.php";
+const BASE_URL = '/Library/';
 
-$currentFolder = basename(dirname($_SERVER['PHP_SELF'])); // տալիս է ընթացիկ folder-ի անունը, օրինակ՝ log-in
+$currentFolder = basename(dirname($_SERVER['PHP_SELF'])); // Gives name of currect directory
 $links = [
     "navFirstLink" => '<a href="' . BASE_URL . 'index.php">Գլխավոր</a>',
-    "navSecondLink" => '<a href="' . BASE_URL . 'app/about-us/">Գրքեր</a>',
-    "navThirdLink" => '<a href="' . BASE_URL . 'app/contact/"">Ժանրեր</a>',
+    "navSecondLink" => '<a href="' . BASE_URL . 'app/books/">Գրքեր</a>',
+    "navThirdLink" => '<a href="' . BASE_URL . 'app/genres/"">Ժանրեր</a>',
     "navFourthLink" => '<a href="' . BASE_URL . 'app/about-us/">Մեր մասին</a>',
     "navFivthLink" => '<a href="' . BASE_URL . 'app/contact/"">Կապ</a>',
     "button" => '<a href="' . BASE_URL . 'app/sign-up/" class="button">Գրանցվել</a>'

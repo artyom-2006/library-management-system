@@ -24,8 +24,8 @@
     <main id="main-section">
         <div id="section-name-bar">
             <div id="section-name">
-                <p class="section-name">Պահպանված էլեկտրոնային գրքեր</p>
-                <hr class="line">
+                <p class="section-name">Պահպանված գրքեր</p>
+                <p class="second-name">Էլեկտրոնային գրքեր</p>
             </div>
         </div>
     </main>
