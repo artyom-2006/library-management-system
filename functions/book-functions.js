@@ -1,3 +1,6 @@
+import { showMessageModal } from "./general-functions.js";
+import { storeSingleEbookGenre } from "./genre-functions.js";
+
 // Ebooks functions
 export function getEbooksData() {
     fetch("/Library/app/ebooks/ebooks-list/get-ebooks-data.php", {
@@ -186,9 +189,31 @@ function renderEbook(ebook) {
 
     dataFields.description.textContent = ebook.description;
 
+    // Setting property name for genres
+    let propertyName = document.querySelector("#ebook-details .ebook-info .ebook-sections .property");
+    propertyName.textContent = "Ժանրեր";
+    
+    // Rendering all genres of ebook as list
+    let genresSection = document.querySelector("#ebook-details .ebook-info .ebook-sections .sections");
+    ebook.genres.forEach(genre => {
+        let genreLink = document.createElement("a");
+        genreLink.href = "/Library/app/genres/ebooks-genres/ebooks-genre-view/";
+        genreLink.classList.add("section");
+        genreLink.textContent = genre.genre_name;
+        genreLink.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            storeSingleEbookGenre(genre.genre_id);
+        });
+
+        genresSection.append(genreLink);
+    });
+
     // Download button functionality
     const downloadButton = document.getElementById("main-button");
-    downloadButton.addEventListener("click", () => downloadFile(ebook.pdf_file_path));
+    downloadButton.addEventListener("click", () => {
+        downloadFile(ebook.pdf_file_path);
+    });
 
     // Save/unsave button functionality
     const saveEbookButton = document.getElementById("save-book-button");
@@ -197,7 +222,10 @@ function renderEbook(ebook) {
     const updatedSaveEbookButton = document.getElementById("save-book-button");
 
     // Update button state
-    if (ebook.isSaved) {
+    if(!ebook.isUserLoggedIn) {
+        updatedSaveEbookButton.classList.add("not-saved");
+        updatedSaveEbookButton.addEventListener("click", () => showMessageModal("Հաղորդագրություն", "Գրքերը պահպանելու համար պետք է ունենաք անձնական հաշիվ"));
+    } else if(ebook.isSaved) {
         updatedSaveEbookButton.classList.add("saved");
         updatedSaveEbookButton.addEventListener("click", () => unsaveEbook(ebook.ebook_id));
     } else {

@@ -15,7 +15,7 @@ registrationForm.addEventListener("submit", (event) => {
     };
 
     // Sending data to the back-end with fetch
-    fetch('http://localhost/Library/app/sign-up/registration-data.php', {
+    fetch('/Library/app/sign-up/registration-data.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

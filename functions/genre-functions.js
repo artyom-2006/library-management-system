@@ -65,7 +65,7 @@ function renderEbooksGenres(genresData) {
     mainSection.append(genresList);
 }
 
-function storeSingleEbookGenre(genreId) {
+export function storeSingleEbookGenre(genreId) {
     fetch(`/Library/app/genres/store-single-ebook-genre.php?id=${genreId}`, {
         method: 'GET',
         headers: {

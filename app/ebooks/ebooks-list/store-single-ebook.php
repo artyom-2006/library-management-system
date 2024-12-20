@@ -5,7 +5,6 @@ header('Content-Type: application/json');
 require "../../../includes/connect.inc.php";
 
 if($_SERVER["REQUEST_METHOD"] === "GET") {
-    $userId = $_SESSION["user_id"];
     $ebookId = $_GET["id"];
 
     try {
@@ -20,14 +19,18 @@ if($_SERVER["REQUEST_METHOD"] === "GET") {
         $ebookData["added_at"] = $formattedData;
 
         // Checkinf if ebook is saved or not
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM saved_ebooks WHERE user_id = :userId AND ebook_id = :ebookId");
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-        $stmt->bindParam(':ebookId', $ebookId, PDO::PARAM_INT);
-        $stmt->execute();
-        $count = $stmt->fetchColumn();
-        
-        if($count > 0) {
-            $ebookData["isSaved"] = true;
+        if(isset($_SESSION["user_id"])) {
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM saved_ebooks WHERE user_id = :userId AND ebook_id = :ebookId");
+            $stmt->bindParam(':userId', $_SESSION["user_id"], PDO::PARAM_INT);
+            $stmt->bindParam(':ebookId', $ebookId, PDO::PARAM_INT);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+            
+            if($count > 0) {
+                $ebookData["isSaved"] = true;
+            } else {
+                $ebookData["isSaved"] = false;
+            }
         } else {
             $ebookData["isSaved"] = false;
         }

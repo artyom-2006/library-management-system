@@ -14,11 +14,22 @@
     <link rel="stylesheet" href="../../../css/components/footer.css">
     <link rel="stylesheet" href="../../../css/components/button.css">
     <link rel="stylesheet" href="../../../css/components/layer.css">
+    <link rel="stylesheet" href="../../../css/components/modal-window.css">
     <link rel="shortcut icon" href="../../../resources/images/opened-book-icon.png" type="image/x-icon">
 </head>
 <body>
     <?php include "../../../includes/loader.inc.php"; ?>
-    <div id="layer"></div>
+    <div id="layer">
+        <div id="modal-window">
+            <div id="modal-content">
+                <span class="heading"></span>
+                <p class="content"></p>
+            </div>
+            <div id="modal-buttons">
+                <button type="button" id="main-modal-button">Լավ</button>
+            </div>
+        </div>
+    </div>
     <?php require "../../../includes/header.inc.php"; ?>
     <main>
         <div id="ebook-view">
@@ -31,14 +42,8 @@
                     <p class="ebook-author"></p>
                     <div class="ebook-properties"></div>
                     <div class="ebook-sections">
-                        <p class="property">Բաժիններ</p>
-                        <div class="sections">
-                            <a href="" class="section">Գեղարվեստական գրականություն</a>
-                            <a href="" class="section">Ֆանտաստիկա</a>
-                            <a href="" class="section">Պատանեկան</a>
-                            <a href="" class="section">Վեպ</a>
-                            <a href="" class="section">Դասական գրականություն</a>
-                        </div>
+                        <p class="property"></p>
+                        <div class="sections"></div>
                     </div>
                     <div class="download-ebook-button-box">
                         <button type="button" id="main-button">Ներբեռնել գիրքը</button>
@@ -48,7 +53,7 @@
             </div>
             <div id="ebook-description">
                 <h3>Նկարագրություն</h3>
-                <p class="description">Օգտվելով Տրանսիլվանիայի հեռավոր գյուղերից մեկում իշխող սնոտիապաշտական հավատալիքներից`մենակյաց բարոն դը Գորցն ու նրա անբաժան ուղեկից Օրֆանիկը բացառապես գիտական հնարքների, գյուտերի շնորհիվ մի ամբողջ գյուղի բնակչության առջև ստանձնում են «սատանայի» դերը`բնակչության ահուսարսափն օգտագործելով իրենց նախագծած ծրագրի իրագործման համար:</p>
+                <p class="description"></p>
             </div>
         </div>
     </main>
