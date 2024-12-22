@@ -8,11 +8,19 @@ loginForm.addEventListener("submit", (event) => {
 
     const loginData = {
         email: document.getElementById("email-input").value.trim(),
-        password: document.getElementById("password-input").value
+        password: document.getElementById("password-input").value,
+        rememberMe: false
     };
 
+    // Checking if remember me checkbox is checked or not
+    const checkbox = document.getElementById("remember-me");
+
+    if(checkbox.checked) {
+        loginData.rememberMe = true;
+    }
+
     // Sending data to the back-end with fetch
-    fetch('http://localhost/Library/app/log-in/login-process.php', {
+    fetch('/Library/app/log-in/login-process.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

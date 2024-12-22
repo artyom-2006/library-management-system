@@ -1,39 +1,77 @@
 <?php
-const BASE_URL = '/Library/';
+if(session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $currentFolder = basename(dirname($_SERVER['PHP_SELF'])); // Gives name of currect directory
 $links = [
-    "navFirstLink" => '<a href="' . BASE_URL . 'index.php">Գլխավոր</a>',
-    "navSecondLink" => '<a href="' . BASE_URL . 'app/books/">Գրքեր</a>',
-    "navThirdLink" => '<a href="' . BASE_URL . 'app/genres/"">Ժանրեր</a>',
-    "navFourthLink" => '<a href="' . BASE_URL . 'app/about-us/">Մեր մասին</a>',
-    "navFivthLink" => '<a href="' . BASE_URL . 'app/contact/"">Կապ</a>',
-    "button" => '<a href="' . BASE_URL . 'app/sign-up/" class="button">Գրանցվել</a>'
+    "general" => '<a href="/Library/app/general/">Գլխավոր</a>',
+    "books" => '<a href="/Library/app/books/">Գրքեր</a>',
+    "genres" => '<a href="/Library/app/genres/">Ժանրեր</a>',
+    "aboutUs" => '<a href="/Library/app/about-us/">Մեր մասին</a>',
+    "contact" => '<a href="/Library/app/contact/">Կապ</a>'
 ];
 
-if($currentFolder == 'Library') {
-    // homepage ...
-} else if($currentFolder == 'sign-up') {
-    $links["button"] = '<a href="' . BASE_URL . 'app/log-in/" class="button">Մուտք</a>';
+// Setting active page on links
+switch($currentFolder) {
+    case "general":
+        $links["general"] = '<a href="/Library/app/general/" class="active">Գլխավոր</a>';
+        break;
+
+    case "books":
+        $links["books"] = '<a href="/Library/app/books/" class="active">Գրքեր</a>';
+        break;
+
+    case "genres":
+        $links["genres"] = '<a href="/Library/app/genres/" class="active">Ժանրեր</a>';
+        break;
+
+    case "about-us":
+        $links["aboutUs"] = '<a href="/Library/app/about-us/" class="active">Մեր մասին</a>';
+        break;
+
+    case "contact":
+        $links["contact"] = '<a href="/Library/app/contact/" class="active">Կապ</a>';
+        break;
+}
+
+$headerLinks = [
+    "navFirstLink" => $links["general"],
+    "navSecondLink" => $links["books"],
+    "navThirdLink" => $links["genres"],
+    "navFourthLink" => $links["aboutUs"],
+    "navFivthLink" => $links["contact"],
+    "navFirstButton" => '<a href="/Library/app/saved-books/" class="icon-link-block"><div class="icon-link saved-books"></div></a>',
+    "navSecondButton" => '<a href="/Library/app/sign-up/" class="button">Գրանցվել</a>'
+];
+
+if($currentFolder === 'sign-up') {
+    $headerLinks["navSecondButton"] = '<a href="/Library/app/log-in/" class="button">Մուտք</a>';
+}
+
+// Checking if user is logged in or not
+if(isset($_SESSION["user_id"])) {
+    $headerLinks["navSecondButton"] = '<a href="/Library/app/contact/" class="icon-link-block"><div class="icon-link user-account"></div></a>';
 }
 ?>
 
 <header>
-    <a href="<?= BASE_URL ?>index.php" class="link-div">
+    <a href="/Library/index.php" class="link-div">
         <div id="heading">
-            <img src="<?= BASE_URL ?>resources/images/opened-book-icon.png" alt="Բացված գիրք">
+            <img src="/Library/resources/images/opened-book-icon.png" alt="Բացված գիրք">
             <span>Գրադարան</span>
         </div>
     </a>
     <div class="hamburger" id="hamburger"></div>
     <nav id="navigation">
         <ul>
-            <li><?= $links["navFirstLink"] ?></li>
-            <li><?= $links["navSecondLink"] ?></li>
-            <li><?= $links["navThirdLink"] ?></li>
-            <li><?= $links["navFourthLink"] ?></li>
-            <li><?= $links["navFivthLink"] ?></li>
+            <li><?= $headerLinks["navFirstLink"] ?></li>
+            <li><?= $headerLinks["navSecondLink"] ?></li>
+            <li><?= $headerLinks["navThirdLink"] ?></li>
+            <li><?= $headerLinks["navFourthLink"] ?></li>
+            <li><?= $headerLinks["navFivthLink"] ?></li>
         </ul>
-        <?= $links["button"] ?>
+        <?= $headerLinks["navFirstButton"] ?>
+        <?= $headerLinks["navSecondButton"] ?>
     </nav>
 </header>

@@ -1,15 +1,9 @@
-<?php
-session_start();
-
-// session-ի մեկ տվյալ ա էս պահին տրվում, id-ն ա օգտատերի, տրվում ա login_process.php ֆայլում
-?>
-
 <!DOCTYPE html>
 <html lang="hy">
 <head>
     <?php require "../../includes/meta-tags.inc.php"; ?>
     <meta name="description" content="">
-    <title>Գրադարան - Գլխավոր</title>
+    <title>Գլխավոր</title>
     <link rel="stylesheet" href="../../css/normalize.min.css">
     <link rel="stylesheet" href="../../css/components/loader.css">
     <link rel="stylesheet" href="../../css/variables/light-mode-variables.css" id="theme-stylesheet">
@@ -24,6 +18,7 @@ session_start();
 <body>
     <?php include "../../includes/loader.inc.php"; ?>
     <div id="layer"></div>
+    <?php require "../../includes/auth.inc.php"; ?>
     <?php require "../../includes/header.inc.php"; ?>
     
     <?php require "../../includes/footer.inc.php"; ?>

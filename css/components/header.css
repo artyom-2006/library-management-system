@@ -55,7 +55,7 @@ header {
     justify-content: space-around;
     align-items: center;
     padding-left: 0;
-    margin-right: 20px;
+    margin-right: 0;
 }
 
 #navigation ul li {
@@ -69,6 +69,35 @@ header {
     transition: .2s;
     font-size: clamp(12px, 1.4vw, 16px);
     font-weight: bold;
+}
+
+#navigation ul li a.active {
+    color: var(--second-color);
+}
+
+#navigation .icon-link-block {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#navigation .icon-link-block .icon-link {
+    width: 22px;
+    height: 22px;
+    background-size: 22px;
+    background-position: center;
+}
+
+#navigation .icon-link-block .saved-books {
+    background-image: var(--save-book-icon);
+}
+
+#navigation .icon-link-block .user-account {
+    background-image: var(--user-account-icon);
 }
 
 #navigation .button {
@@ -85,6 +114,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 
 /* Media queries */
@@ -92,6 +122,10 @@ header {
 @media (hover: hover) {
     #navigation ul li a:hover {
         color: var(--main-color);
+    }
+
+    #navigation .icon-link-block:hover {
+        background-color: var(--icon-hover-background-color);
     }
 
     #navigation .button:hover {
@@ -102,6 +136,10 @@ header {
 @media (hover: none) {
     #navigation ul li a:focus {
         color: var(--main-color);
+    }
+
+    #navigation .icon-link-block:focus {
+        background-color: var(--icon-hover-background-color);
     }
 
     #navigation .button:focus {
