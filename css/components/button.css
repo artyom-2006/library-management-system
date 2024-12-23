@@ -39,6 +39,16 @@
     background-image: var(--saved-book-icon);
 }
 
+/* Text button */
+#text-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+
 /* Media queries */
 /* Hover and Focus */
 @media (hover: hover) {

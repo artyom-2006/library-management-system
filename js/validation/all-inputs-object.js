@@ -64,6 +64,13 @@ if(currentFolder === "sign-up") {
     currentPageInputs = {
         passwordInput: allInputs.passwordInput
     };
+} else if(currentFolder === "account") {
+    currentPageInputs = {
+        nameInput: allInputs.nameInput,
+        surnameInput: allInputs.surnameInput,
+        phoneInput: allInputs.phoneInput
+        //passwordInput: allInputs.passwordInput
+    };
 }
 
 export {currentPageInputs};

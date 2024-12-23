@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--main-font);
+}
+
+/* Main */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#section-name-bar {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+}
+
+#section-name-bar #section-name {
+    width: 100%;
+}
+
+/* Section name */
+#section-name {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section-name .section-name {
+    color: var(--text-color);
+    font-family: BebasNeue;
+    margin-top: 30px;
+    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: 0;
+}
+
+/* Account information section */
+#account-information {
+    width: 100%;
+    display: flex;
+    padding: 40px 10% 100px 10%;
+}
+
+/* Form section */
+#form-section {
+    width: 50%;
+}
+
+#input-field, #passwords-input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#passwords-input-field {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#input-field label {
+    margin-top: 10px;
+}
+
+#input-field label, #passwords-input-field label {
+    font-family: var(--main-font);
+    font-size: 16px;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#input-field input, #passwords-input-field input {
+    width: clamp(340px, 25vw, 400px);
+    height: 40px;
+    border: 2px solid var(--input-border-color);
+    border-radius: 10px;
+    background-color: var(--input-background-color);
+    outline: none;
+    color: var(--text-color);
+    caret-color: var(--text-color);
+    text-indent: 8px;
+    font-size: 16px;
+    transition: .2s;
+}
+
+#passwords-input-field input::placeholder {
+    font-size: 14px;
+}
+
+#input-field .not-valid-message, #passwords-input-field .not-valid-message {
+    color: var(--input-error-border-color);
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-left: 4px;
+    width: 100%;
+}
+
+#form #main-button {
+    width: 220px;
+}
+
+#text-button {
+    margin-left: 30px;
+}
+
+/* Illustration section */
+#illustration {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#illustration img {
+    width: 500px;
+    margin-top: -20px;
+}

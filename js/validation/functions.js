@@ -1,9 +1,9 @@
-import {currentPageInputs} from "./all-inputs-object.js";
+import { currentPageInputs } from "./all-inputs-object.js";
 
 export function validate(objectInput) {
     objectInput.element.addEventListener("blur", () => {
         let isValid;
-        // Դաշտերի համար կիրառում ենք trim() մեթոդը բացի գաղտնաբառի դաշտից
+        
         if(objectInput.element.id === "password-input") {
             isValid = objectInput.pattern.test(objectInput.element.value);
         } else {

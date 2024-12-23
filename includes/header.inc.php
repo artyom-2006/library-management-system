@@ -8,6 +8,7 @@ $links = [
     "general" => '<a href="/Library/app/general/">Գլխավոր</a>',
     "books" => '<a href="/Library/app/books/">Գրքեր</a>',
     "genres" => '<a href="/Library/app/genres/">Ժանրեր</a>',
+    "blog" => '<a href="/Library/app/contact/">Բլոգ</a>',
     "aboutUs" => '<a href="/Library/app/about-us/">Մեր մասին</a>',
     "contact" => '<a href="/Library/app/contact/">Կապ</a>'
 ];
@@ -39,8 +40,8 @@ $headerLinks = [
     "navFirstLink" => $links["general"],
     "navSecondLink" => $links["books"],
     "navThirdLink" => $links["genres"],
-    "navFourthLink" => $links["aboutUs"],
-    "navFivthLink" => $links["contact"],
+    "navFourthLink" => $links["blog"],
+    "navFivthLink" => $links["aboutUs"],
     "navFirstButton" => '<a href="/Library/app/saved-books/" class="icon-link-block"><div class="icon-link saved-books"></div></a>',
     "navSecondButton" => '<a href="/Library/app/sign-up/" class="button">Գրանցվել</a>'
 ];
@@ -51,7 +52,7 @@ if($currentFolder === 'sign-up') {
 
 // Checking if user is logged in or not
 if(isset($_SESSION["user_id"])) {
-    $headerLinks["navSecondButton"] = '<a href="/Library/app/contact/" class="icon-link-block"><div class="icon-link user-account"></div></a>';
+    $headerLinks["navSecondButton"] = '<a href="/Library/app/account/" class="icon-link-block"><div class="icon-link user-account"></div></a>';
 }
 ?>
 
