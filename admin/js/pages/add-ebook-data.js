@@ -98,7 +98,6 @@ ebookForm.addEventListener("submit", (event) => {
 
                 // Clearing the form
                 document.getElementById("add-ebook-form").reset();
-                console.log(response);
             }
         })
         .catch((error) => {

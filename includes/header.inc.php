@@ -8,7 +8,7 @@ $links = [
     "general" => '<a href="/Library/app/general/">Գլխավոր</a>',
     "books" => '<a href="/Library/app/books/">Գրքեր</a>',
     "genres" => '<a href="/Library/app/genres/">Ժանրեր</a>',
-    "blog" => '<a href="/Library/app/contact/">Բլոգ</a>',
+    "blog" => '<a href="/Library/app/blog/">Բլոգ</a>',
     "aboutUs" => '<a href="/Library/app/about-us/">Մեր մասին</a>',
     "contact" => '<a href="/Library/app/contact/">Կապ</a>'
 ];
@@ -33,6 +33,10 @@ switch($currentFolder) {
 
     case "contact":
         $links["contact"] = '<a href="/Library/app/contact/" class="active">Կապ</a>';
+        break;
+
+    case "blog":
+        $links["blog"] = '<a href="/Library/app/blod/" class="active">Բլոգ</a>';
         break;
 }
 

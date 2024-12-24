@@ -62,4 +62,18 @@
             Տեսնել ամրագրումները
         </a>
     </div>
+    <button class="collapsible">
+        <img src="/Library/admin/resources/images/blog-icon.png" alt="Բլոգ">
+        Բլոգ
+    </button>
+    <div class="nested">
+        <a href="/Library/admin/blog/add-post/">
+            <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել գրառում">
+            Ավելացնել գրառում
+        </a>
+        <a href="/Library/admin/blog/posts-list/">
+            <img src="/Library/admin/resources/images/list-icon.png" alt="ՖԳրառումների ցանկ">
+            Գրառումների ցանկ
+        </a>
+    </div>
 </aside>

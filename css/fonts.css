@@ -7,3 +7,8 @@
     font-family: BebasNeue;
     src: url('../resources/fonts/BebasNeue.ttf');
 }
+
+@font-face {
+    font-family: norTar;
+    src: url('../resources/fonts/NorTar.otf');
+}

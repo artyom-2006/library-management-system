@@ -54,7 +54,8 @@ td.button-cell {
     word-break: normal;
 }
 
-.ebook-body tr .description {
+.ebook-body tr .description,
+.post-body tr .description {
     min-width: 320px;
     font-size: 12px;
 }
