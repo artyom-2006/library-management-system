@@ -87,6 +87,7 @@ export function deleteUser(userId, row) {
                 row.remove();
             } else {
                 alert("Առաջացել է խնդիր");
+                console.log(response)
             }
         })
         .catch((error) => {

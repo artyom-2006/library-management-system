@@ -2,7 +2,7 @@
 <html lang="hy">
 <head>
     <?php require "../../../includes/meta-tags.inc.php"; ?>
-    <title>Էլեկտրոնային գրքեր</title>
+    <title>Ժանրեր</title>
     <link rel="stylesheet" href="../../../css/normalize.min.css">
     <link rel="stylesheet" href="../../../css/components/loader.css">
     <link rel="stylesheet" href="../../../css/variables/light-mode-variables.css" id="theme-stylesheet">
@@ -22,21 +22,18 @@
     </div>
     <?php require "../../../includes/header.inc.php"; ?>
     <main id="main-section">
-        <div id="section-name-search-bar">
+        <div id="section-name-bar">
             <div id="section-name">
                 <p class="section-name">Էլեկտրոնային գրքեր</p>
-            </div>
-            <div id="search-bar">
-                <input type="search" class="search-bar" placeholder="Որևէ հեղինա՞կ, որևէ գի՞րք․․․">
-                <div id="filter-icon"></div>
+                <p class="second-name"></p>
             </div>
         </div>
     </main>
     <?php require "../../../includes/footer.inc.php"; ?>
     <script src="../../../js/components/loader.js"></script>
     <script src="../../../js/theme.js"></script>
-    <script type="module" src="../../../js/pages/ebooks-list-process.js"></script>
-    <script src="../../../js/components/hamburger-menu.js"></script>
+    <script type="module" src="../../../js/pages/ebooks-genre-view-process.js"></script>
     <script src="../../../js/components/ebook-modal-view.js"></script>
+    <script src="../../../js/components/hamburger-menu.js"></script>
 </body>
 </html>

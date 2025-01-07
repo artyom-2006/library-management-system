@@ -37,32 +37,6 @@
         </a>
     </div>
     <button class="collapsible">
-        <img src="/Library/admin/resources/images/book-icon.png" alt="Ֆիզիկական գրքեր">
-        Ֆիզիկական գրքեր
-    </button>
-    <div class="nested">
-        <a href="#">
-            <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել ֆիզիկական գիրք">
-            Ավելացնել գիրք
-        </a>
-        <a href="#">
-            <img src="/Library/admin/resources/images/list-icon.png" alt="Ֆիզիկական գրքերի ցանկ">
-            Գրքերի ցանկ
-        </a>
-        <a href="#">
-            <img src="/Library/admin/resources/images/plus-icon.png" alt="Ավելացնել բաժին">
-            Ավելացնել ժանր
-        </a>
-        <a href="#">
-            <img src="/Library/admin/resources/images/list-icon.png" alt="Բաժինների ցանկ">
-            Ժանրերի ցանկ
-        </a>
-        <a href="#">
-            
-            Տեսնել ամրագրումները
-        </a>
-    </div>
-    <button class="collapsible">
         <img src="/Library/admin/resources/images/blog-icon.png" alt="Բլոգ">
         Բլոգ
     </button>

@@ -3,10 +3,10 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$currentFolder = basename(dirname($_SERVER['PHP_SELF'])); // Gives name of currect directory
+$currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 $links = [
     "general" => '<a href="/Library/app/general/">Գլխավոր</a>',
-    "books" => '<a href="/Library/app/books/">Գրքեր</a>',
+    "books" => '<a href="/Library/app/ebooks/">Գրքեր</a>',
     "genres" => '<a href="/Library/app/genres/">Ժանրեր</a>',
     "blog" => '<a href="/Library/app/blog/">Բլոգ</a>',
     "aboutUs" => '<a href="/Library/app/about-us/">Մեր մասին</a>',
@@ -19,8 +19,8 @@ switch($currentFolder) {
         $links["general"] = '<a href="/Library/app/general/" class="active">Գլխավոր</a>';
         break;
 
-    case "books":
-        $links["books"] = '<a href="/Library/app/books/" class="active">Գրքեր</a>';
+    case "ebooks":
+        $links["books"] = '<a href="/Library/app/ebooks/ebooks-list/" class="active">Գրքեր</a>';
         break;
 
     case "genres":

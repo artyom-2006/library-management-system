@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-require "../../../includes/connect.inc.php";
+require "../../includes/connect.inc.php";
 
 if($_SERVER["REQUEST_METHOD"] === "GET") {
     $userId = $_SESSION["user_id"];

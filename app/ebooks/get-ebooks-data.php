@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-require "../../../includes/connect.inc.php";
+require "../../includes/connect.inc.php";
 
 if($_SERVER["REQUEST_METHOD"] === "GET") {
     try {

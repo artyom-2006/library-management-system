@@ -3,7 +3,7 @@ import { storeSingleEbookGenre } from "./genre-functions.js";
 
 // Ebooks functions
 export function getEbooksData() {
-    fetch("/Library/app/ebooks/ebooks-list/get-ebooks-data.php", {
+    fetch("/Library/app/ebooks/get-ebooks-data.php", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ function ebookModalView(ebook) {
 }
 
 function storeSingleEbook(ebookId) {
-    fetch(`/Library/app/ebooks/ebooks-list/store-single-ebook.php?id=${ebookId}`, {
+    fetch(`/Library/app/ebooks/store-single-ebook.php?id=${ebookId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -197,7 +197,7 @@ function renderEbook(ebook) {
     let genresSection = document.querySelector("#ebook-details .ebook-info .ebook-sections .sections");
     ebook.genres.forEach(genre => {
         let genreLink = document.createElement("a");
-        genreLink.href = "/Library/app/genres/ebooks-genres/ebooks-genre-view/";
+        genreLink.href = "/Library/app/genres/ebooks-genre-view/";
         genreLink.classList.add("section");
         genreLink.textContent = genre.genre_name;
         genreLink.addEventListener("click", (event) => {
@@ -285,12 +285,7 @@ function unsaveEbook(ebookId) {
 }
 
 export function getSavedEbooksData() {
-    fetch("/Library/app/saved-books/saved-ebooks/get-saved-ebooks-data.php", {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
+    fetch("/Library/app/saved-books/get-saved-ebooks-data.php")
     .then((response) => response.json())
     .then((response) => {
         if(response.status === "success") {

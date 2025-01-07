@@ -75,7 +75,7 @@ export function storeSingleEbookGenre(genreId) {
     .then((response) => response.json())
     .then((response) => {
         if(response.status === "success") {
-           window.location.href = "/Library/app/genres/ebooks-genres/ebooks-genre-view/";
+           window.location.href = "/Library/app/genres/ebooks-genre-view/";
         }
     })
     .catch((error) => {
@@ -86,7 +86,7 @@ export function storeSingleEbookGenre(genreId) {
 export function getEbooksByGenre() {
     const genreName = document.querySelector("#section-name .second-name");
 
-    fetch("/Library/app/genres/ebooks-genres/ebooks-genre-view/get-ebooks-by-genre.php", {
+    fetch("/Library/app/genres/ebooks-genre-view/get-ebooks-by-genre.php", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

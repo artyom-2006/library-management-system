@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/components/loader.css">
     <link rel="stylesheet" href="../../css/variables/light-mode-variables.css" id="theme-stylesheet">
     <link rel="stylesheet" href="../../css/variables/variables.css">
-    <link rel="stylesheet" href="../../css/pages/sign-up-log-in.css">
+    <link rel="stylesheet" href="../../css/pages/genres-list.css">
     <link rel="stylesheet" href="../../css/fonts.css">
     <link rel="stylesheet" href="../../css/components/header.css">
     <link rel="stylesheet" href="../../css/components/footer.css">
@@ -20,7 +20,13 @@
     <?php include "../../includes/loader.inc.php"; ?>
     <div id="layer"></div>
     <?php require "../../includes/header.inc.php"; ?>
-
+    <main id="main-section" style="min-height: 650px;">
+        <div id="section-name-bar">
+            <div id="section-name">
+                <p class="section-name">Մեր մասին</p>
+            </div>
+        </div>
+    </main>
     <?php require "../../includes/footer.inc.php"; ?>
     <script src="../../js/components/loader.js"></script>
     <script src="../../js/theme.js"></script>

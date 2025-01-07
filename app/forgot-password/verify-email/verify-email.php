@@ -1,9 +1,11 @@
 <?php
 session_start();
 
+header('Content-Type: application/json');
+
 require "../../../includes/connect.inc.php";
-require "./email-content.inc.php";
-require "./phpmailer.inc.php";
+require "email-content.inc.php";
+require "phpmailer.inc.php";
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -23,33 +25,18 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             
             if(sendEmail($recipient, $subject, $body)) {
                 http_response_code(200);
-                $response = [
-                    'status' => 'success',
-                    'message' => 'The email has been sent'
-                ];
+                echo json_encode(['status' => 'success', 'message' => 'The email has been sent']);
             } else {
                 http_response_code(500);
-                $response = [
-                    'status' => 'fail',
-                    'message' => 'Operation failed'
-                ];
+                echo json_encode(['status' => 'fail', 'message' => 'Operation failed']);
             }
         } else {
             http_response_code(401);
-            $response = [
-                "status" => "error",
-                "message" => "Invalid email"
-            ];
+            echo json_encode(["status" => "error", "message" => "Invalid email"]);
         }
     } catch (PDOException $e) {
         http_response_code(500);
-        $response = [
-            'status' => 'fail',
-            'message' => 'Operation failed'
-        ];
+        echo json_encode(['status' => 'fail', 'message' => 'Operation failed']);
     }
 }
-
-header('Content-Type: application/json');
-echo json_encode($response);
 exit;
